@@ -7,6 +7,10 @@ class LinkedList {
     this._length = 0
   }
 
+  get head() {
+    return this._head
+  }
+
   size() {
     return this._length
   }
