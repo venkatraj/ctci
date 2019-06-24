@@ -28,3 +28,17 @@ test('Retrieving front node', () => {
   myLinkedList.push_back(20)
   expect(myLinkedList.front()).toBe(10)
 })
+
+test('ToString method', () => {
+  let myLinkedList = new LinkedList()
+  myLinkedList.push_front(10)
+  myLinkedList.push_back(20)
+  expect(myLinkedList.toString()).toBe('10 => 20')
+})
+
+test('Retrieving back node', () => {
+  let myLinkedList = new LinkedList()
+  myLinkedList.push_front(10)
+  myLinkedList.push_back(20)
+  expect(myLinkedList.back()).toBe(20)
+})

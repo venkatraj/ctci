@@ -33,7 +33,9 @@ class LinkedList {
 
   push_back(data) {
     if (!this.isEmpty()) {
-      this._tail.next = new Node(data)
+      let currentTail = this._tail
+      this._tail = new Node(data)
+      currentTail.next = this._tail
     } else {
       this._head = new Node(data)
       this._tail = this._head
@@ -43,6 +45,17 @@ class LinkedList {
 
   back() {
     return this._tail.data
+  }
+
+  toString() {
+    let currentNode = this._head
+    let output = ''
+    while (currentNode.next !== null) {
+      output += `${currentNode.data} => `
+      currentNode = currentNode.next
+    }
+    output += `${currentNode.data} => `
+    return output.slice(0, output.length - 4)
   }
 }
 
