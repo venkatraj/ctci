@@ -11,6 +11,10 @@ class LinkedList {
     return this._head
   }
 
+  get tail() {
+    return this._tail
+  }
+
   size() {
     return this._length
   }
@@ -20,15 +24,17 @@ class LinkedList {
   }
 
   push_front(data) {
+    let newNode = new Node(data)
     if (!this.isEmpty()) {
-      let currentNode = this._head
-      this._head = new Node(data)
+      let currentNode = this._head      
+      this._head = newNode
       this._head.next = currentNode
     } else {
-      this._head = new Node(data)
+      this._head = newNode
       this._tail = this._head
     }
     this._length++
+    return newNode
   }
 
   front() {
@@ -36,15 +42,17 @@ class LinkedList {
   }
 
   push_back(data) {
+    let newNode = new Node(data)
     if (!this.isEmpty()) {
       let currentTail = this._tail
-      this._tail = new Node(data)
+      this._tail = newNode
       currentTail.next = this._tail
     } else {
-      this._head = new Node(data)
+      this._head = newNode
       this._tail = this._head
     }
     this._length++
+    return newNode
   }
 
   back() {
